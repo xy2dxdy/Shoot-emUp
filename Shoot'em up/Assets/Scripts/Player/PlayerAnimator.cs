@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
+using UnityEditor.U2D;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,6 +10,9 @@ public class PlayerAnimator : MonoBehaviour
     private Animator _animator;
     private PlayerMovement _playerMovement;
     private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Sprite _spriteUp;
+    [SerializeField] private Sprite _spriteDown;
+    [SerializeField] private Sprite _spriteRight;
 
     private void Start()
     {
@@ -17,14 +22,98 @@ public class PlayerAnimator : MonoBehaviour
     }
     private void Update()
     {
-        if (_playerMovement.moveDir.x != 0 || _playerMovement.moveDir.y != 0)
+        float dx = _playerMovement.moveDir.x;
+        float dy = _playerMovement.moveDir.y;
+        if (dy == 0 && dx != 0)
         {
-            _animator.SetBool("Move", true);
+            _animator.SetBool("MoveUp", false);
+            _animator.SetBool("MoveDown", false);
             SpriteDirectionChecker();
+            _animator.SetBool("Move", true);
+            
         }
-        else
+        else if (dx == 0 && dy > 0)
         {
             _animator.SetBool("Move", false);
+            _animator.SetBool("MoveDown", false);
+            _animator.SetBool("MoveUp", true);
+        }
+        else if (dx == 0 && dy < 0)
+        {
+            _animator.SetBool("Move", false);
+            _animator.SetBool("MoveUp", false);
+            _animator.SetBool("MoveDown", true);
+        }
+        else if (dx < 0 && dy > 0) // left up
+        {
+            if (-dx > dy)
+            {
+                _animator.SetBool("MoveUp", false);
+                _animator.SetBool("MoveDown", false);
+                SpriteDirectionChecker();
+                _animator.SetBool("Move", true);
+            }
+            else
+            {
+                _animator.SetBool("MoveUp", false);
+                _animator.SetBool("MoveDown", false);
+                _animator.SetBool("MoveUp", true);
+            }
+        }
+        else if (dx < 0 && dy < 0)//left down
+        {
+            if (dx < dy)
+            {
+                _animator.SetBool("MoveUp", false);
+                _animator.SetBool("MoveDown", false);
+                SpriteDirectionChecker();
+                _animator.SetBool("Move", true);
+            }
+            else
+            {
+                _animator.SetBool("Move", false);
+                _animator.SetBool("MoveUp", false);
+                _animator.SetBool("MoveDown", true);
+            }
+        }
+        else if (dx > 0 && dy > 0)//right up
+        {
+            if (dx > dy)
+            {
+                _animator.SetBool("MoveUp", false);
+                _animator.SetBool("MoveDown", false);
+                SpriteDirectionChecker();
+                _animator.SetBool("Move", true);
+            }
+            else
+            {
+                _animator.SetBool("Move", false);
+                _animator.SetBool("MoveDown", false);
+                _animator.SetBool("MoveUp", true);
+            }
+        }
+        else if (dx > 0 && dy < 0)//right down
+        {
+            if (dx > -dy)
+            {
+                _animator.SetBool("MoveUp", false);
+                _animator.SetBool("MoveDown", false);
+                SpriteDirectionChecker();
+                _animator.SetBool("Move", true);
+            }
+            else
+            {
+                _animator.SetBool("Move", false);
+                _animator.SetBool("MoveUp", false);
+                _animator.SetBool("MoveDown", true);
+            }
+        }
+        else 
+        {
+            _animator.SetBool("MoveDown", false);
+            _animator.SetBool("MoveUp", false);
+            _animator.SetBool("Move", false);
+            
         }
     }
 

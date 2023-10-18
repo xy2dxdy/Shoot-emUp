@@ -5,25 +5,30 @@ using UnityEngine;
 public class MeleeWeaponController : WeaponController
 {
     GameObject spawnMelee;
+    [HideInInspector] public Vector3 offset;
+
+    private Vector3 weaponSize;
+    public Vector3 WeaponSize { get => weaponSize; }
+
+    private Vector3 playerSize;
+    public Vector3 PlayerSize { get => playerSize; }
+
     protected override void Start()
     {
         base.Start();
-        spawnMelee = Instantiate(weaponData.Prefab);
-        spawnMelee.transform.position = transform.position;
+        playerSize = pm.GetComponent<BoxCollider2D>().size;
+        weaponSize = weaponData.Prefab.GetComponent<BoxCollider2D>().size;
+        offset = new Vector3(playerSize.x / 2, 0, 0) + new Vector3(weaponSize.x / 2, 0, 0);
+        spawnMelee = Instantiate(weaponData.Prefab, transform.position + offset, Quaternion.identity);
     }
     protected override void Update()
     {
-        spawnMelee.transform.position = transform.position;
-        _currentCooldown -= Time.deltaTime;
-        if (_currentCooldown <= 0f && (Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2")))
-        {
-            Attack();
-        }
+        base.Update();
+        spawnMelee.transform.position = transform.position + offset;
+        spawnMelee.GetComponent<MeleeBehaviour>().DirectionChecker(pm.lastMovedVector);
     }
     protected override void Attack()
     {
-        base.Attack();
-        spawnMelee.transform.position = transform.position;
-        spawnMelee.GetComponent<MeleeBehaviour>().DirectionChecker(pm.lastMovedVector);
+        base.Attack(); 
     }
 }

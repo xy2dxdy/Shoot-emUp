@@ -4,7 +4,25 @@ using UnityEngine;
 
 public class MeleeWeaponBehaviour : MonoBehaviour
 {
+    public WeaponScriptableObject weaponData;
+    private MeleeWeaponController controller;
     protected Vector3 direction;
+    private BoxCollider2D player;
+
+    protected float currentDamage;
+    protected float currentSpeed;
+    protected float currentCooldownDuration;
+    protected float currentPierce;
+
+    private void Awake()
+    {
+        controller = FindObjectOfType<MeleeWeaponController>();
+        player = controller.GetComponentInParent<BoxCollider2D>();
+        currentDamage = weaponData.Damage;
+        currentSpeed = weaponData.Speed;
+        currentCooldownDuration = weaponData.CooldownDuration;
+        currentPierce = weaponData.Pierce;
+    }
 
     public void DirectionChecker(Vector3 dir)
     {
@@ -18,8 +36,13 @@ public class MeleeWeaponBehaviour : MonoBehaviour
 
         if (dirX < 0 && dirY == 0) //left
         {
-            scale.x = scale.x * -1;
-            scale.y = scale.y * -1;
+            controller.offset = -new Vector3(controller.PlayerSize.x / 2 + controller.WeaponSize.x / 2, 0, 0);
+            scale.x = -1;
+        }
+        else if (dirX > 0 && dirY == 0)
+        {
+            controller.offset = new Vector3(controller.PlayerSize.x / 2 + controller.WeaponSize.x / 2, 0, 0);
+            scale.x = 1;
         }
         else if (dirX == 0 && dirY < 0) // down
         {
@@ -51,5 +74,16 @@ public class MeleeWeaponBehaviour : MonoBehaviour
         }
         transform.localScale = scale;
         transform.rotation = Quaternion.Euler(rotation);
+
     }
+
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            EnemyStats enemyStats = collision.GetComponent<EnemyStats>();
+            enemyStats.TakeDamage(currentDamage);
+        }
+    }
+
 }
