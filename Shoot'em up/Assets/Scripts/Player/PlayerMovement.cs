@@ -11,11 +11,14 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public float lastVerticalVector;
     [HideInInspector]
-    public Vector2 _moveDir;
+    public Vector2 moveDir;
+    [HideInInspector]
+    public Vector2 lastMovedVector;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        lastMovedVector = new Vector2(1f, 0f);
     }
     private void Update()
     {
@@ -30,19 +33,25 @@ public class PlayerMovement : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
 
-        _moveDir = new Vector2(moveX, moveY).normalized;
+        moveDir = new Vector2(moveX, moveY).normalized;
 
-        if (_moveDir.x != 0)
+        if (moveDir.x != 0)
         {
-            lastHorizontalVector = _moveDir.x;
+            lastHorizontalVector = moveDir.x;
+            lastMovedVector = new Vector2(lastHorizontalVector, 0f);
         }
-        if (_moveDir.y != 0)
+        if (moveDir.y != 0)
         {
-            lastVerticalVector = _moveDir.y;
+            lastVerticalVector = moveDir.y;
+            lastMovedVector = new Vector2(0f, lastVerticalVector);
+        }
+        if (moveDir.x != 0 && moveDir.y != 0)
+        {
+            lastMovedVector = new Vector2(lastHorizontalVector, lastVerticalVector);
         }
     }
     private void Move()
     {
-        _rb.velocity = new Vector2(_moveDir.x * _moveSpeed, _moveDir.y * _moveSpeed);
+        _rb.velocity = new Vector2(moveDir.x * _moveSpeed, moveDir.y * _moveSpeed);
     }
 }
