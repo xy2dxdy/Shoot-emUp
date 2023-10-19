@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MeleeWeaponBehaviour : MonoBehaviour
 {
-    public WeaponScriptableObject weaponData;
+    public WeaponConfig weaponData;
     private MeleeWeaponController controller;
     protected Vector3 direction;
     private BoxCollider2D player;

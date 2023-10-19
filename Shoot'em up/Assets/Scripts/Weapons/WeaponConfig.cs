@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "WeaponScriptableObject", menuName = "ScriptableObjects/Weapon")]
-public class WeaponScriptableObject : ScriptableObject
+[CreateAssetMenu(fileName = "WeaponConfig", menuName = "Config/Weapon", order = 51)]
+public class WeaponConfig : ScriptableObject
 {
     [SerializeField] private GameObject prefab;
     public GameObject Prefab { get => prefab; private set => prefab = value; }
@@ -19,5 +16,5 @@ public class WeaponScriptableObject : ScriptableObject
     public float CooldownDuration { get => cooldownDuration; private set => cooldownDuration = value; }
 
     [SerializeField] private float pierce;
-    public float Pierce { get => pierce; private set => pierce = value;}
+    public float Pierce { get => pierce; private set => pierce = value; }
 }

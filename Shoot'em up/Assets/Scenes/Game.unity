@@ -307,6 +307,7 @@ GameObject:
   - component: {fileID: 882653597}
   - component: {fileID: 882653603}
   - component: {fileID: 882653602}
+  - component: {fileID: 882653604}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -326,11 +327,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a56f5e07b920ab46b174571e7354acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 4
-  lastHorizontalVector: 0
-  lastVerticalVector: 0
-  moveDir: {x: 0, y: 0}
-  lastMovedVector: {x: 0, y: 0}
+  _config: {fileID: 11400000, guid: c3e5ccfe6530b2947808d91d7b5ceb3e, type: 2}
+  _rigidBody: {fileID: 882653598}
+  _input: {fileID: 882653604}
 --- !u!50 &882653598
 Rigidbody2D:
   serializedVersion: 4
@@ -507,6 +506,18 @@ MonoBehaviour:
   _spriteUp: {fileID: 211029370, guid: 688d2e20cd269084b9b4df51cd8f5ad8, type: 3}
   _spriteDown: {fileID: 1563113111, guid: 688d2e20cd269084b9b4df51cd8f5ad8, type: 3}
   _spriteRight: {fileID: -32081047, guid: 688d2e20cd269084b9b4df51cd8f5ad8, type: 3}
+--- !u!114 &882653604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882653596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c99d9b4927af114b8955c9cf7b95a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1418235282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -515,10 +526,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2999566085660971898, guid: d3d146547bb31ed4082459f011d2c294, type: 3}
+      propertyPath: enemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 30cd705eb695f4846ba84697eab67ce8, type: 2}
     - target: {fileID: 4451761740194261408, guid: d3d146547bb31ed4082459f011d2c294, type: 3}
       propertyPath: m_Name
       value: Bat
       objectReference: {fileID: 0}
+    - target: {fileID: 4929589981291301492, guid: d3d146547bb31ed4082459f011d2c294, type: 3}
+      propertyPath: enemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 30cd705eb695f4846ba84697eab67ce8, type: 2}
     - target: {fileID: 7167408026326750538, guid: d3d146547bb31ed4082459f011d2c294, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.995

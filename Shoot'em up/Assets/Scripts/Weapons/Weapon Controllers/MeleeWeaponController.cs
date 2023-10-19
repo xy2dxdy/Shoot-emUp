@@ -25,7 +25,7 @@ public class MeleeWeaponController : WeaponController
     {
         base.Update();
         spawnMelee.transform.position = transform.position + offset;
-        spawnMelee.GetComponent<MeleeBehaviour>().DirectionChecker(pm.lastMovedVector);
+        //spawnMelee.GetComponent<MeleeBehaviour>().DirectionChecker(pm.LastMovedVector);
     }
     protected override void Attack()
     {
