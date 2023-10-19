@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectileWeaponBehaviour : MonoBehaviour
 {
-    public WeaponScriptableObject weaponData;
+    public WeaponConfig weaponData;
     protected Vector3 direction;
     [SerializeField] private float _destroyAfterSeconds;
 

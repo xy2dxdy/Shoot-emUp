@@ -13,6 +13,6 @@ public class KnifeController : WeaponController
         base.Attack();
         GameObject spawnKnife = Instantiate(weaponData.Prefab);
         spawnKnife.transform.position = transform.position;
-        spawnKnife.GetComponent<KnifeBehaviour>().DirectionChecker(pm.lastMovedVector);
+        //spawnKnife.GetComponent<KnifeBehaviour>().DirectionChecker(pm.LastMovedVector);
     }
 }

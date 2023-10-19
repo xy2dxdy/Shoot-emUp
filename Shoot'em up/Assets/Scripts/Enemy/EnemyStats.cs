@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    public EnemyScriptableObject enemyData;
+    public EnemyConfig enemyData;
 
     private float _currentMoveSpeed;
     private float _currentHealth;
