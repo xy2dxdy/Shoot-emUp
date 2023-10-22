@@ -15,6 +15,6 @@ public class PlayerMovement : MonoBehaviour
     
     private void Move()
     {
-        _rigidBody.velocity = new Vector2(_input.MoveDir.x * _config.MoveSpeed, _input.MoveDir.y * _config.MoveSpeed);
+        _rigidBody.velocity = _input.MoveDir * _config.MoveSpeed;
     }
 }
