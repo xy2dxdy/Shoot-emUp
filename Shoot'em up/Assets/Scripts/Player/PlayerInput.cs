@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    public event Action OnMoveDirectionChanged;
+    //public event Action OnMoveDirectionChanged;
 
     public Vector2 MoveDir { get; private set; }
 
