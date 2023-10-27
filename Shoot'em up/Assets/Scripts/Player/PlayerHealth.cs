@@ -34,9 +34,4 @@ public class PlayerHealth : MonoBehaviour, IHealth
         }
         OnIncrease?.Invoke();
     }
-
-    public void Reload(int value)
-    {
-
-    }
 }
