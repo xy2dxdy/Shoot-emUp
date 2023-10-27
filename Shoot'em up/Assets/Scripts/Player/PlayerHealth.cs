@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour, IHealth
 {
     [SerializeField] private PlayerConfig _config;
-    
+
     public event Action<int> OnDecrease;
     public event Action OnIncrease;
 
@@ -35,10 +33,5 @@ public class PlayerHealth : MonoBehaviour, IHealth
             Current = _config.MaxHP;
         }
         OnIncrease?.Invoke();
-    }
-
-    public void Reload(int value)
-    {
-
     }
 }
