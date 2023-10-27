@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour, IHealth
+public class PlayerExperience : MonoBehaviour, IExperience
 {
     [SerializeField] private PlayerConfig _config;
 
