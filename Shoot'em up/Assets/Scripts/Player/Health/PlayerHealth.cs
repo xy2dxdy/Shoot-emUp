@@ -5,17 +5,17 @@ public class PlayerHealth : MonoBehaviour, IHealth
 {
     [SerializeField] private PlayerConfig _config;
 
-    public event Action<int> OnDecrease;
+    public event Action<float> OnDecrease;
     public event Action OnIncrease;
 
-    public int Current { get; private set; }
+    public float Current { get; private set; }
 
     private void Start()
     {
         Current = _config.MaxHP;
     }
 
-    public void Decrease(int value)
+    public void Decrease(float value)
     {
         Current -= value;
         if (Current <= _config.MinHP)
@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
         OnDecrease?.Invoke(_config.MinHP);
     }
 
-    public void Increase(int value)
+    public void Increase(float value)
     {
         Current += value;
         if (Current >= _config.MaxHP)

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8243725032698366904}
   - component: {fileID: 4119723719014677480}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 3249754279891086605}
   - component: {fileID: 8334598047959978876}
   - component: {fileID: 1695616464076098861}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Stone
   m_TagString: Bullet
   m_Icon: {fileID: 0}

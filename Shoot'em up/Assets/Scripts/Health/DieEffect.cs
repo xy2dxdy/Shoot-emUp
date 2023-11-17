@@ -16,7 +16,7 @@ public class DieEffect : MonoBehaviour
         _health.OnDecrease -= DeadCheck;
     }
 
-    private void DeadCheck(int value)
+    private void DeadCheck(float value)
     {
         if (_health.Current <= value)
         {

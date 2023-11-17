@@ -10,14 +10,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Background
+  - Environment
   - Water
   - UI
-  - Midground
-  - Foreground
+  - EnemyTrigger
+  - 
   - MeleeWeapon
   - RangeWeapon
-  - Bullet
+  - 
   - Player
   - Enemy
   - 

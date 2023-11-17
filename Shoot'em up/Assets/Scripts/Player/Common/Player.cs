@@ -3,21 +3,20 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerExperience _playerExperience;
-    [SerializeField] private int _valueIncrease;
     [SerializeField] private PlayerHealth _health;
     [SerializeField] private int _enemyLayerID;
     [SerializeField] private PlayerInput _input;
     [SerializeField] private PlayerStateMachine _stateMachine;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer != _enemyLayerID)
         {
             return;
         }
 
-       // collision.gameObject.TryGetComponent<Enemy>(out var enemy);
-        //_health.Decrease(enemy.Config.Damage);
+        collision.gameObject.TryGetComponent<Enemy>(out var enemy);
+        _health.Decrease(enemy.Config.Damage);
     }
 
     private void Update()
