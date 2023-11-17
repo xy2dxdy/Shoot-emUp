@@ -17,7 +17,7 @@ public class PlayerHealthUI : MonoBehaviour
         _health.OnDecrease -= UpdateHealthBar;
     }
 
-    private void UpdateHealthBar(int value)
+    private void UpdateHealthBar(float value)
     {
         _healthUI.fillAmount = _health.Current / _config.MaxHP;
         if (_healthUI.fillAmount == _config.MinHP)
