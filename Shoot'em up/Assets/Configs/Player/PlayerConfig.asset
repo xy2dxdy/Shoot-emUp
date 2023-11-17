@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: PlayerConfig
   m_EditorClassIdentifier: 
   <MoveSpeed>k__BackingField: 4
+  <MaxHP>k__BackingField: 5
+  <MinHP>k__BackingField: 0
