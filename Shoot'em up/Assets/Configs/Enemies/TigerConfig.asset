@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHealthPoints>k__BackingField: 8
   <MinHealthPoints>k__BackingField: 0
-  <SpawnTime>k__BackingField: 10
-  <MoveSpeed>k__BackingField: 2
+  <SpawnTime>k__BackingField: 15
+  <MoveSpeed>k__BackingField: 3
   <Damage>k__BackingField: 2
   <AttackCoolDown>k__BackingField: 3

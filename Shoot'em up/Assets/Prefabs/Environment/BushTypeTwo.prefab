@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 3902595246039272764}
   - component: {fileID: 4351113562992749177}
   - component: {fileID: 7961403431438984401}
+  - component: {fileID: 2499362908152581608}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -85,7 +86,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -180,3 +181,36 @@ PolygonCollider2D:
       - {x: 0.10597539, y: -0.060412288}
       - {x: 0.10613892, y: -0.028799158}
   m_UseDelaunayMesh: 0
+--- !u!114 &2499362908152581608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8324959556860408725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: 0.003223896, y: -0.103865266, z: 0}
+  - {x: -0.08958888, y: -0.06665921, z: 0.000000007450581}
+  - {x: -0.1127789, y: 0.045430183, z: 0.000000007450581}
+  - {x: -0.060550928, y: 0.09033716, z: 0}
+  - {x: 0.000641346, y: 0.09420228, z: 0}
+  - {x: 0.109466076, y: -0.028007627, z: 0.000000007450581}
+  - {x: 0.085674286, y: -0.09226978, z: 0}
+  m_ShapePathHash: 1203190311
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -394898
+  m_LocalBounds:
+    m_Center: {x: -0.0016564131, y: -0.004831493, z: 0}
+    m_Extent: {x: 0.11112249, y: 0.09903377, z: 0}
