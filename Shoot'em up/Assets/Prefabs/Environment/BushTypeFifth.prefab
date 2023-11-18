@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6866550947406447312}
   - component: {fileID: 6706558044671968107}
   - component: {fileID: 3036595798106262130}
+  - component: {fileID: 5672015444615964274}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -53,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -159,6 +160,41 @@ PolygonCollider2D:
       - {x: 0.05638349, y: -0.024487019}
       - {x: 0.056231566, y: 0.0039954185}
   m_UseDelaunayMesh: 0
+--- !u!114 &5672015444615964274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4185087574720961647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.059539557, y: -0.09090471, z: 0}
+  - {x: -0.10413909, y: -0.026166439, z: -0.000000014901161}
+  - {x: -0.05499363, y: 0.08181262, z: 0}
+  - {x: 0.02769661, y: 0.13067174, z: 0.000000014901161}
+  - {x: 0.079996705, y: 0.09317756, z: 0}
+  - {x: 0.04360771, y: 0.026113033, z: 0.000000014901161}
+  - {x: 0.102706194, y: -0.039804697, z: 0.000000014901161}
+  - {x: 0.073177695, y: -0.11136174, z: 0}
+  - {x: 0.00041985512, y: -0.121632814, z: 0.000000014901161}
+  m_ShapePathHash: -830765761
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -383114
+  m_LocalBounds:
+    m_Center: {x: -0.00071644783, y: 0.0045194626, z: 0}
+    m_Extent: {x: 0.10342264, y: 0.12615228, z: 0}
 --- !u!1 &4998607632970169914
 GameObject:
   m_ObjectHideFlags: 0

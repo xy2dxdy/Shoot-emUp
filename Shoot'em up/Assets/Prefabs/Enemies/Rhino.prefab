@@ -438,6 +438,7 @@ GameObject:
   - component: {fileID: 1689775104795956766}
   - component: {fileID: 5495703297457954843}
   - component: {fileID: 6869875771759343584}
+  - component: {fileID: 939849588750635577}
   m_Layer: 12
   m_Name: Model
   m_TagString: Untagged
@@ -480,7 +481,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -546,6 +547,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 5495703297457954843}
+--- !u!114 &939849588750635577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7667520138135316454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -2.480336, y: -0.27707663, z: 0}
+  - {x: -2.1116261, y: -0.14790279, z: 0}
+  - {x: -2.299153, y: 0.4932227, z: 0}
+  - {x: -1.9997209, y: 1.3200425, z: 0}
+  - {x: -1.7282954, y: 0.049222454, z: 0}
+  - {x: -1.0517236, y: 0.8949373, z: 0}
+  - {x: -1.0517236, y: 1.444652, z: 0}
+  - {x: -0.45972323, y: 1.1486517, z: 0}
+  - {x: 0.935707, y: 0.32408, z: 0}
+  - {x: 1.9348571, y: 0.31785643, z: 0}
+  - {x: 2.3734221, y: -0.16220607, z: 0}
+  - {x: 2.3522854, y: -1.0079209, z: 0}
+  - {x: 2.0562851, y: -0.7330636, z: 0}
+  - {x: 2.1251428, y: -1.375, z: 0}
+  - {x: 1.2951417, y: -1.3884926, z: 0}
+  - {x: 1.400856, y: -0.81763506, z: 0}
+  - {x: -0.100287795, y: -0.81763506, z: 0}
+  - {x: -0.036859173, y: -1.4096354, z: 0}
+  - {x: -0.8121454, y: -1.3952265, z: 0}
+  - {x: -1.0249742, y: -1.0005828, z: 0}
+  - {x: -1.319539, y: -0.6792395, z: 0}
+  - {x: -2.283569, y: -0.78635406, z: 0}
+  m_ShapePathHash: 1420132622
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 240720
+  m_LocalBounds:
+    m_Center: {x: -0.05345702, y: 0.017508268, z: 0}
+    m_Extent: {x: 2.426879, y: 1.4271437, z: 0}
 --- !u!1 &8740879545339100677
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,5 +822,5 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 4, y: 3}
+  m_Size: {x: 3.5, y: 3}
   m_Direction: 1
